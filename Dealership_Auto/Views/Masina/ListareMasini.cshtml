@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Dealership_Auto.Models.Masina>
+
+@{
+    ViewData["Title"] = "Listare Masini";
+}
+
+<h1>Listare Masini</h1>
+
+<p>
+    <a asp-action="CreateMasina">Adaugare Masina</a>
+</p>
+
+<p>
+    <span style="float: left">
+        @using (@Html.BeginForm("ListareMasini", "Masina", FormMethod.Get))
+        {
+            <b>Cauta dupa:</b>
+            <br />
+            @Html.RadioButton("searchBy", "Model", true) <text>Model   </text>
+            @Html.RadioButton("searchBy", "Producator") <text>Producator</text> <br />
+            @Html.TextBox("search")<input type="submit" value="Cauta" />
+        }
+    </span>
+
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Producator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pret) $
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Motorizare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Combustibil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Culoare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnFabricatie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descriere)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pret)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Motorizare)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Combustibil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Culoare)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnFabricatie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descriere)
+                </td>
+                <td>
+                    @Html.ActionLink("Editeaza", "EditMasina", "Masina", new { id = item.MasinaID }) |
+                    @Html.ActionLink("Detalii", "DetailsMasina", "Masina", new { id = item.MasinaID }) |
+                    @Html.ActionLink("Sterge", "DeleteMasina", "Masina", new { id = item.MasinaID }) |
+                    @Html.ActionLink("Vanzare", "CreateTranzactie", "Tranzactie", new { id = item.MasinaID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

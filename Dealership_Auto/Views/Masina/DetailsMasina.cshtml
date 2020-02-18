@@ -1,0 +1,84 @@
+﻿@model Dealership_Auto.Models.Masina
+
+@{
+    ViewData["Title"] = "DetailsMasina";
+}
+
+<h1>DetailsMasina</h1>
+
+<div>
+    <h4>Masina</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MasinaID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MasinaID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ModelID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ModelID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Producator)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Producator)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pret)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pret)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Motorizare)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Motorizare)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Combustibil)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Combustibil)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Culoare)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Culoare)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AnFabricatie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AnFabricatie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KM)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KM)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descriere)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descriere)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Editare", "EditMasina", "Masina", new { id = Model.MasinaID }) |
+    <a asp-action="ListareMasini">Back to List</a>
+</div>

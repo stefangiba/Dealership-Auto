@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Dealership_Auto.Models.Client>
+
+@{
+    ViewData["Title"] = "Listare Clienti";
+}
+
+<h1>Listare Clientii</h1>
+
+<p>
+    <a asp-action="CreateClient">Adaugare Client</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefon)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.ActionLink("Editare", "Edit", "Client", new { id=item.ClientID }) |
+                @Html.ActionLink("Detalii", "Details", "Client", new { id=item.ClientID }) |
+                @Html.ActionLink("Stergere", "Delete", "Client", new { id=item.ClientID }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

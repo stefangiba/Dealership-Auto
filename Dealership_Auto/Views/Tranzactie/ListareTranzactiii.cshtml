@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Dealership_Auto.Models.Tranzactie>
+
+@{
+    ViewData["Title"] = "ListareTranzactii";
+}
+
+<h1>ListareTranzactii</h1>
+
+<p>
+    <span style="float: left">
+        @using (Html.BeginForm("ListareTranzactiii", "Tranzactie", FormMethod.Get))
+        {
+            <b>Cauta clientii care au minim</b> <br />
+            @Html.TextBox("searchNumber")<br />
+            <b>tranzactii cu autoturisme produse de</b><br />
+            @Html.TextBox("searchModel")
+            <input type="submit" value="Cauta" />
+        }
+    </span>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TranzactieID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MasinaID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AngajatID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suma)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TranzactieID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MasinaID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AngajatID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Suma)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalii", "DetailsTranzactie", "Tranzactie", new { id = item.TranzactieID }) |
+                    @Html.ActionLink("Sterge", "DeleteTranzactie", "Tranzactie", new { id = item.TranzactieID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

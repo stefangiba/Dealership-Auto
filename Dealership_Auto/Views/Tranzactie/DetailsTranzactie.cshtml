@@ -1,0 +1,187 @@
+﻿@model Dealership_Auto.Models.Tranzactie
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<div>
+    <h4>Tranzactie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TranzactieID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TranzactieID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MasinaID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MasinaID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AngajatID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AngajatID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClientID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClientID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Suma)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Suma)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.MasinaID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.MasinaID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.Producator)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.Producator)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.Pret)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.Pret)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.Motorizare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.Motorizare)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.Combustibil)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.Combustibil)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.Culoare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.Culoare)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.masina.AnFabricatie)*@
+            Anul Fabricatiei
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.AnFabricatie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.KM)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.KM)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.Descriere)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.Descriere)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.ClientID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.ClientID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Nume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Nume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Prenume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Prenume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Adresa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Adresa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.client.Telefon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.client.Telefon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.angajat.AngajatID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.angajat.AngajatID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.angajat.Nume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.angajat.Nume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.angajat.Prenume)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.angajat.Prenume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.angajat.Adresa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.angajat.Adresa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.angajat.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.angajat.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.angajat.Telefon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.angajat.Telefon)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
